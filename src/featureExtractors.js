@@ -9,6 +9,7 @@ import spectralSkewness from './extractors/spectralSkewness';
 import spectralKurtosis from './extractors/spectralKurtosis';
 import zcr from './extractors/zcr';
 import loudness from './extractors/loudness';
+import lufs from './extractors/lufs';
 import perceptualSpread from './extractors/perceptualSpread';
 import perceptualSharpness from './extractors/perceptualSharpness';
 import mfcc from './extractors/mfcc';
@@ -44,6 +45,7 @@ export {
 
   zcr,
   loudness,
+  lufs,
   perceptualSpread,
   perceptualSharpness,
   powerSpectrum,
