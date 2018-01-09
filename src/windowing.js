@@ -49,3 +49,15 @@ export function hamming(size) {
 
   return hammingBuffer;
 }
+
+export function lufsBucket(size) {
+  let lufsBucket = new Float32Array(size);
+  // for (let i = 0; i < size; i++) {
+  //   //According to http://uk.mathworks.com/help/signal/ref/hamming.html
+  //   hammingBuffer[i] = 0.54 - 0.46 * Math.cos(2 * Math.PI * (i / size - 1));
+  // }
+
+  return lufsBucket;
+}
+
+

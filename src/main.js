@@ -88,7 +88,8 @@ var Meyda = {
     if (typeof feature === 'object') {
       var results = {};
       for (var x = 0; x < feature.length; x++) {
-        results[feature[x]] = (this.featureExtractors[feature[x]]({
+
+        results[feature[x]] = (this.featureExtractors[feature[x]].main({
           ampSpectrum:this.ampSpectrum,
           complexSpectrum:this.complexSpectrum,
           signal:this.signal,
@@ -99,6 +100,7 @@ var Meyda = {
           previousSignal:this.previousSignal,
           previousAmpSpectrum:this.previousAmpSpectrum,
           previousComplexSpectrum:this.previousComplexSpectrum,
+          globalBuckets: this.globalBuckets
         }));
       }
 

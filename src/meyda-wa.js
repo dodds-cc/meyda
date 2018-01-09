@@ -45,6 +45,22 @@ export class MeydaAnalyzer{
 
   this.setSource(options.source);
 
+  // call inits on extractors requested...
+  // setup high level buckets
+
+    
+  for (var i = 0; i < this._m._featuresToExtract.length; i++) {
+    var name = this._m._featuresToExtract[i];
+    
+    if (typeof(featureExtractors[name].init) === "function") {
+      console.log('found init');
+      let requirements = featureExtractors[name].init({audioContext: this._m.audioContext});
+      console.log(requirements);
+      //need to store these requirements further up the chain
+      this._m.globalBuckets = requirements;
+    }
+  }
+
   this._m.spn.onaudioprocess = (e)=> {
     if (this._m.inputData !== null) {
       this._m.previousInputData = this._m.inputData;
